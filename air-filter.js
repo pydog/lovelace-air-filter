@@ -41,6 +41,10 @@ class AirFilter extends HTMLElement {
                   <span>50</span>
                   <p>湿度(%)</p>
                 </div>
+                <div>
+                  <span>65</span>
+                  <p>滤芯剩余(%)</p>
+                </div>
             </div>
             <div class="footer">
               <div class="status">
@@ -114,7 +118,8 @@ class AirFilter extends HTMLElement {
             .tmp-body div span{font-size:40px;}
             .tmp-body div p{margin:0;font-size:12px;color:gray;}
             .tmp-body div:nth-child(1){text-align:right;border-right:1px solid silver;padding-right:20px;}
-            .tmp-body div:nth-child(2){padding-left:20px;}
+            .tmp-body div:nth-child(2){text-align:center;border-center:1px solid silver;padding-center:20px;}
+            .tmp-body div:nth-child(3){text-align:left;border-left:1px solid silver;padding-left:20px;}
             .footer{display:flex;}
             .footer div{flex:1;text-align:center;}
             .footer div ha-icon{font-size:25px;cursor:pointer;}
@@ -287,9 +292,10 @@ class AirFilter extends HTMLElement {
       $('.footer div:nth-child(1) p').textContent = '开启'
     }
     $('.title').textContent = title
-    // 温湿度
+    // 温湿度，滤芯剩余寿命
     $('.tmp-body div:nth-child(1) span').textContent = temperature
     $('.tmp-body div:nth-child(2) span').textContent = humidity
+    $('.tmp-body div:nth-child(3) span').textContent = filter_life_remaining
 
     // 质量
     let qls = $('.content').classList
